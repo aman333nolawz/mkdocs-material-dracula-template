@@ -1,27 +1,49 @@
-site_name: Py-GameUI
-site_url: https://aman333nolawz.github.io/py-GameUI-docs/
+site_name: Dracula Template for mkdocs-material
+site_url: https://github.com/aman333nolawz/mkdocs-material-dracula-template
+
+repo_url: https://github.com/aman333nolawz/mkdocs-material-dracula-template
+edit_uri: edit/main/docs/src/markdown
 
 docs_dir: docs/src/markdown
 theme:
   name: material
   custom_dir: docs/theme
+
   icon:
     logo: material/book-open-page-variant
     repo: fontawesome/brands/github
 
   palette:
-    scheme: dracula
-    primary: deep purple
-    accent: deep purple
+    - media: "(prefers-color-scheme: dark)"
+      scheme: dracula
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+      primary: deep purple
+      accent: deep purple
+
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
   font:
     text: Roboto
     code: Fira Code Medium
+
   features:
     - navigation.tabs
+    - navigation.top
+    - navigation.instant
 
 nav:
-  - Getting Started:
-      - Introduction: index.md
+  - Getting Started: index.md
+  - Examples:
+    - Example 1: example_1.md
+
+plugins:
+  - search
 
 markdown_extensions:
   - markdown.extensions.toc:
@@ -40,23 +62,12 @@ markdown_extensions:
   - pymdownx.superfences:
       preserve_tabs: true
       custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
         - name: math
           class: arithmatex
           format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
   - pymdownx.highlight:
-      extend_pygments_lang:
-        - name: php-inline
-          lang: php
-          options:
-            startinline: true
-        - name: pycon3
-          lang: pycon
-          options:
-            python3: true
       linenums_style: pymdownx-inline
+      guess_lang: true
   - pymdownx.inlinehilite:
       custom_inline:
         - name: math
@@ -67,8 +78,8 @@ markdown_extensions:
       repo_url_shorthand: true
       social_url_shorthand: true
       social_url_shortener: true
-      user: facelessuser
-      repo: pymdown-extensions
+      user: aman333nolawz
+      repo: mkdocs-material-dracula-template
       normalize_issue_symbols: true
   - pymdownx.tilde:
   - pymdownx.caret:
@@ -97,13 +108,7 @@ markdown_extensions:
   - pymdownx.saneheaders:
 
 extra_css:
-  - assets/pymdownx-extras/extra-aa7dff8003.css
-extra_javascript:
-  - assets/pymdownx-extras/extra-uml-51b11a9a.js
-
-repo_url: https://github.com/aman333nolawz/py-GameUI
-repo_name: aman333nolawz/py-GameUI
-edit_uri: https://github.com/aman333nolawz/py-GameUI/edit/main/docs/src/markdown/
+  - assets/pymdownx-extras/extra-478c224635.css
 
 extra:
   social:
